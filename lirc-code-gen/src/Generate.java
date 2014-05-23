@@ -42,7 +42,7 @@ public class Generate {
 		} else if (nib == 1) {
 			cmd = "FORWARD";
 		} else if (nib == 2) {
-			cmd = "BACK";
+			cmd = "BACKWARD";
 		} else {
 			cmd = "BRAKE";
 		}

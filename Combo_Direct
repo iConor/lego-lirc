@@ -1,0 +1,43 @@
+#
+# contributed by Conor Cary
+#
+# brand:                       LEGO
+# model no. of remote control: 8885 Power Functions IR Remote Control
+#                              Power Functions Combo Direct Mode
+# devices being controlled by this remote: 8884 Power Functions IR Receiver
+# 
+
+begin remote
+
+  name  LEGO_Combo_Direct
+  bits           16
+  flags SPACE_ENC
+  eps            30
+  aeps          100
+
+  header        156  1014
+  one           156   546
+  zero          156   260
+  ptrail        156
+  gap          1014
+
+      begin codes
+	FLOAT_FLOAT		0x010E
+	FLOAT_FORWARD		0x011F
+	FLOAT_BACKWARD		0x012C
+	FLOAT_BRAKE		0x013D
+	FORWARD_FLOAT		0x014A
+	FORWARD_FORWARD		0x015B
+	FORWARD_BACKWARD	0x0168
+	FORWARD_BRAKE		0x0179
+	BACKWARD_FLOAT		0x0186
+	BACKWARD_FORWARD	0x0197
+	BACKWARD_BACKWARD	0x01A4
+	BACKWARD_BRAKE		0x01B5
+	BRAKE_FLOAT		0x01C2
+	BRAKE_FORWARD		0x01D3
+	BRAKE_BACKWARD		0x01E0
+	BRAKE_BRAKE		0x01F1
+      end codes
+
+end remote
