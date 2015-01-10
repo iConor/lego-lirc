@@ -1,0 +1,158 @@
+#
+# contributed by Diomidis Spinellis
+# based on timing parameters and software by Conor Cary
+#
+# brand:                       LEGO
+# model no. of remote control: Power Functions Combo PWM Mode
+# devices being controlled by this remote: 8884 Power Functions IR Receiver
+#
+# The commands are coded as channel #, side (Red or Blue), _ PWM power level
+# PWM power level can be -7 to 7 or BRAKE, which causes the engine to brake
+# rathen than float.
+begin remote
+
+  name  LEGO_Single_Output
+  bits           16
+  flags SPACE_ENC
+  eps            30
+  aeps          100
+
+  header        156  1014
+  one           156   546
+  zero          156   260
+  ptrail        156
+  gap          1014
+
+      begin codes
+	1R_0		0x040B
+	1R_1		0x041A
+	1R_2		0x0429
+	1R_3		0x0438
+	1R_4		0x044F
+	1R_5		0x045E
+	1R_6		0x046D
+	1R_7		0x047C
+	1R_BRAKE	0x0483
+	1R_M7		0x0492
+	1R_M6		0x04A1
+	1R_M5		0x04B0
+	1R_M4		0x04C7
+	1R_M3		0x04D6
+	1R_M2		0x04E5
+	1R_M1		0x04F4
+	1B_0		0x050A
+	1B_1		0x051B
+	1B_2		0x0528
+	1B_3		0x0539
+	1B_4		0x054E
+	1B_5		0x055F
+	1B_6		0x056C
+	1B_7		0x057D
+	1B_BRAKE	0x0582
+	1B_M7		0x0593
+	1B_M6		0x05A0
+	1B_M5		0x05B1
+	1B_M4		0x05C6
+	1B_M3		0x05D7
+	1B_M2		0x05E4
+	1B_M1		0x05F5
+	2R_0		0x140A
+	2R_1		0x141B
+	2R_2		0x1428
+	2R_3		0x1439
+	2R_4		0x144E
+	2R_5		0x145F
+	2R_6		0x146C
+	2R_7		0x147D
+	2R_BRAKE	0x1482
+	2R_M7		0x1493
+	2R_M6		0x14A0
+	2R_M5		0x14B1
+	2R_M4		0x14C6
+	2R_M3		0x14D7
+	2R_M2		0x14E4
+	2R_M1		0x14F5
+	2B_0		0x150B
+	2B_1		0x151A
+	2B_2		0x1529
+	2B_3		0x1538
+	2B_4		0x154F
+	2B_5		0x155E
+	2B_6		0x156D
+	2B_7		0x157C
+	2B_BRAKE	0x1583
+	2B_M7		0x1592
+	2B_M6		0x15A1
+	2B_M5		0x15B0
+	2B_M4		0x15C7
+	2B_M3		0x15D6
+	2B_M2		0x15E5
+	2B_M1		0x15F4
+	3R_0		0x2409
+	3R_1		0x2418
+	3R_2		0x242B
+	3R_3		0x243A
+	3R_4		0x244D
+	3R_5		0x245C
+	3R_6		0x246F
+	3R_7		0x247E
+	3R_BRAKE	0x2481
+	3R_M7		0x2490
+	3R_M6		0x24A3
+	3R_M5		0x24B2
+	3R_M4		0x24C5
+	3R_M3		0x24D4
+	3R_M2		0x24E7
+	3R_M1		0x24F6
+	3B_0		0x2508
+	3B_1		0x2519
+	3B_2		0x252A
+	3B_3		0x253B
+	3B_4		0x254C
+	3B_5		0x255D
+	3B_6		0x256E
+	3B_7		0x257F
+	3B_BRAKE	0x2580
+	3B_M7		0x2591
+	3B_M6		0x25A2
+	3B_M5		0x25B3
+	3B_M4		0x25C4
+	3B_M3		0x25D5
+	3B_M2		0x25E6
+	3B_M1		0x25F7
+	4R_0		0x3408
+	4R_1		0x3419
+	4R_2		0x342A
+	4R_3		0x343B
+	4R_4		0x344C
+	4R_5		0x345D
+	4R_6		0x346E
+	4R_7		0x347F
+	4R_BRAKE	0x3480
+	4R_M7		0x3491
+	4R_M6		0x34A2
+	4R_M5		0x34B3
+	4R_M4		0x34C4
+	4R_M3		0x34D5
+	4R_M2		0x34E6
+	4R_M1		0x34F7
+	4B_0		0x3509
+	4B_1		0x3518
+	4B_2		0x352B
+	4B_3		0x353A
+	4B_4		0x354D
+	4B_5		0x355C
+	4B_6		0x356F
+	4B_7		0x357E
+	4B_BRAKE	0x3581
+	4B_M7		0x3590
+	4B_M6		0x35A3
+	4B_M5		0x35B2
+	4B_M4		0x35C5
+	4B_M3		0x35D4
+	4B_M2		0x35E7
+	4B_M1		0x35F6
+      end codes
+
+end remote
+
