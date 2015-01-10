@@ -1,8 +1,9 @@
 public class Generate {
 
 	public static void main(String[] args) {
-//		comboDirect();
-		 comboPWM();
+    		//comboDirect();
+    		comboSingleOutput();
+		 // comboPWM();
 	}
 
 	/**
@@ -53,6 +54,42 @@ public class Generate {
 			cmd = "BRAKE";
 		}
 		return cmd;
+	}
+
+	/**
+	 * Generates codes for single output mode
+	 */
+	static void comboSingleOutput() {
+		// Nibble 1 -- Address = 0, Escape = 0, Channel = #, Channel = #.
+		for (int nibble1 = 0; nibble1 < 4; nibble1++) {
+			// Nibble 2 -- Output A/B: 0b0100 through 0b0101.
+			for (int nibble2 = 4; nibble2 <= 5; nibble2++) {
+				// Nibble 3 -- Output A: 0b0000 through 0b1111.
+				for (int nibble3 = 0; nibble3 < 16; nibble3++) {
+					// Print name of code (raw hex string).
+					System.out.print("\t");
+					System.out.print((nibble1 & 3) + 1); // Channel
+					System.out.print((nibble2 & 1) == 0 ? "R" : "B"); // Red / Blue
+					System.out.print("_");
+                                        if (nibble3 == 8)
+                                            System.out.print("BRAKE");  // Brake then float
+                                        else if ((nibble3 & 8) != 0) {
+                                            System.out.print("M");      // Minus
+                                            System.out.print(8 - (nibble3 & 7));
+                                        } else
+                                            System.out.print(nibble3 & 7);
+
+                                        // Print hex formatted code:
+                                        System.out.print("\t\t0x");
+                                        System.out.print(nibble1);
+                                        System.out.print(nibble2);
+                                        System.out.print(Integer.toHexString(nibble3).toUpperCase());
+                                        // LRC = 0xF xor Nibble 1 xor Nibble 2 xor Nibble 3
+                                        System.out.println(Integer.toHexString(
+                                                        0xF ^ nibble1 ^ nibble2 ^ nibble3).toUpperCase());
+				}
+			}
+		}
 	}
 
 	/**
