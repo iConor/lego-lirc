@@ -1,9 +1,9 @@
 public class Generate {
 
 	public static void main(String[] args) {
-    		//comboDirect();
-    		comboSingleOutput();
-		 // comboPWM();
+		//comboDirect();
+		singleOutput();
+		// comboPWM();
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class Generate {
 	/**
 	 * Generates codes for single output mode
 	 */
-	static void comboSingleOutput() {
+	static void singleOutput() {
 		// Nibble 1 -- Address = 0, Escape = 0, Channel = #, Channel = #.
 		for (int nibble1 = 0; nibble1 < 4; nibble1++) {
 			// Nibble 2 -- Output A/B: 0b0100 through 0b0101.
