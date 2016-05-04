@@ -1,9 +1,39 @@
 public class Generate {
 
 	public static void main(String[] args) {
+		extendedMode();
 		//comboDirect();
-		singleOutput();
+		//singleOutput();
 		// comboPWM();
+	}
+
+	/**
+	 * Generates LEGO LIRC codes for Extended Mode.
+	 */
+	static void extendedMode() {
+		// Array of Extended mode functions names.
+		String[] function = {"B-F_A","INC_A", "DEC_A", "NOT_USED", "TGL_B", "NOT_USED", "TGL_ADR", "ALN_TGL", "RESERVED"};
+		// Nibble 1 -- Toggle = 0, Escape = 0, Channel = #, Channel = #.
+		for (int nibble1 = 0; nibble1 < 4; nibble1++) { // 4 to 7 is ch1 to ch4
+			// Nibble 2 -- Address = 0, Mode = 0, Mode = 0, Mode = 0.
+			int nibble2 = 0; // = 0
+			// Nibble 3 -- Outputs: 0b0000 through 0b1000.
+			for (int nibble3 = 0; nibble3 < 9; nibble3++) {
+				if(function[nibble3]=="NOT_USED" || function[nibble3]=="RESERVED"){
+					continue;
+				}
+				// Print name of function.
+				System.out.print("\tCH" + nibble1 + "_" + function[nibble3]);
+				// Print hex formatted code:
+				System.out.print("\t\t0x");
+				System.out.print(nibble1);
+				System.out.print(nibble2);
+				System.out.print(nibble3);
+				// LRC = 0xF xor Nibble 1 xor Nibble 2 xor Nibble 3
+				System.out.println(Integer.toHexString(
+						0xF ^ nibble1 ^ nibble2 ^ nibble3).toUpperCase());
+			}
+		}
 	}
 
 	/**
