@@ -8,18 +8,18 @@ Setup
 
 - Copy the included configuration files into the an appropriate folder (likely /etc/lirc/lircd.conf.d/lego).
 - Add include directives to /etc/lirc/lircd.conf for each configuration file you wish to use.
-  - For example:
-        echo "include /etc/lirc/lircd.conf.d/lego/Combo_PWM" >> /etc/lirc/lircd.conf
-- [LIRC_RPI_Install](https://github.com/iConor/lego-lirc/blob/master/LIRC_RPI_Install.md) includes the necessary steps to get LIRC up and running on a Raspberry Pi.
+  - For example:  
+  `echo "include /etc/lirc/lircd.conf.d/lego/Combo_PWM" >> /etc/lirc/lircd.conf`
+- [LIRC_RPI_Install](https://github.com/iConor/lego-lirc/blob/master/reference/LIRC_RPI_Install.md) includes the necessary steps to get LIRC up and running on a Raspberry Pi.
 - Jorge Pereira's blog post, [Infrared Remote Control](http://ofalcao.pt/blog/en/2014/infrared-remote-control), demonstrates how to use LEGO LIRC with a headphone jack.
 
 Reference Files
 ---------------
 
-- [LEGO_Power_Functions_RC_v120](https://github.com/iConor/lego-lirc/blob/master/LEGO_Power_Functions_RC_v120.pdf) is a copy of LEGO's official documentation for their protocol.
-- [LPF_RC_Protocol](https://github.com/iConor/lego-lirc/blob/master/LPF_RC_Protocol.rst) contains a summarized protocol definition and encoding/decoding timing parameters.
-- [LPF_RC_Modes](https://github.com/iConor/lego-lirc/blob/master/LPF_RC_Modes.rst) contains summarized mode-specific data and deviations from the standard protocol.
-- [LIRC_Remote](https://github.com/iConor/lego-lirc/blob/master/LIRC_Remote.rst) contains common LIRC lircd.conf-style configuration file settings for the LEGO RC protocol.
+- [LEGO_Power_Functions_RC_v120](https://github.com/iConor/lego-lirc/blob/master/reference/LEGO_Power_Functions_RC_v120.pdf) is a copy of LEGO's official documentation for their protocol.
+- [LPF_RC_Protocol](https://github.com/iConor/lego-lirc/blob/master/reference/LPF_RC_Protocol.rst) contains a summarized protocol definition and encoding/decoding timing parameters.
+- [LPF_RC_Modes](https://github.com/iConor/lego-lirc/blob/master/reference/LPF_RC_Modes.rst) contains summarized mode-specific data and deviations from the standard protocol.
+- [LIRC_Remote](https://github.com/iConor/lego-lirc/blob/master/reference/LIRC_Remote) contains common LIRC lircd.conf-style configuration file settings for the LEGO RC protocol.
 
 
 Known Issues
