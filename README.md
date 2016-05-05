@@ -10,12 +10,13 @@ LIRC_RPI_install.md includes the necessary steps to get LIRC up and running on a
 
 Jorge Pereira's blog post, [Infrared Remote Control](http://ofalcao.pt/blog/en/2014/infrared-remote-control), demonstrates how to use LEGO LIRC with a headphone jack.
 
-References
-----------
+Reference Files
+---------------
 
-- LPF_RC_Protocol.rst contains the protocol definition and encoding/decoding timing parameters.
-- LPF_RC_Modes.rst contains mode-specific data and deviations from the standard protocol.
-
+- LEGO_Power_Functions_RC_v120.pdf is a copy of LEGO's official documentation for their protocol.
+- LPF_RC_Protocol.rst contains a summarized protocol definition and encoding/decoding timing parameters.
+- LPF_RC_Modes.rst contains summarized mode-specific data and deviations from the standard protocol.
+- LIRC_Remote.rst contains common LIRC lircd.conf-style configuration file settings for the LEGO RC protocol.
 
 
 Known Issues
