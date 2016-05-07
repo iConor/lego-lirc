@@ -6,4 +6,4 @@ wtf = os.path.join(pwd, os.path.pardir)
 parent_directory = os.path.abspath(wtf)
 sys.path.insert(0, parent_directory)
 
-import pf
+import power_functions as pf

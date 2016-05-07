@@ -7,7 +7,7 @@
 #################################
 
 
-import rc
+import pf_rc_protocol as rc
 
 
 #  Data (PWM Steps)
