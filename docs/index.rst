@@ -11,6 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   Readme.rst
    LPF_RC_Protocol.rst
    LPF_RC_Modes.rst
    LIRC_RPI_Install.rst
