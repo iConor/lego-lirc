@@ -1,4 +1,4 @@
-import pf
+from context import pf
 
 pf.extended.lirc_codes()
 pf.direct.lirc_codes()
