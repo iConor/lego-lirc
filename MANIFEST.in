@@ -1,0 +1,3 @@
+include LICENSE README.rst requirements.txt
+graft config-files
+prune docs/_build
