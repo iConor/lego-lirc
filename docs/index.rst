@@ -11,6 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   LPF_RC_Protocol.rst
+   LPF_RC_Modes.rst
+   LIRC_RPI_Install.rst
+   LIRC_Remote.rst
+   License.rst
+
 
 
 Indices and tables
@@ -19,4 +25,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
