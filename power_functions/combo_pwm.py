@@ -1,18 +1,9 @@
-#################################
-#
-#   LEGO Power Functions RC v1.20
-#
-#   - Combo PWM Mode
-#
-#################################
+"""LEGO Power Functions RC v1.20 - Combo PWM Mode"""
 
+import power_functions.pf_rc_protocol as rc
 
-import pf_rc_protocol as rc
-
-
-#  Data (PWM Steps)
-#
-steps = ["FLT",  # Float
+# Data (PWM Steps)
+STEPS = ["FLT",  # Float
          "FWD1",  # PWM forward, step 1
          "FWD2",  # PWM forward, step 2
          "FWD3",  # PWM forward, step 3
@@ -29,36 +20,27 @@ steps = ["FLT",  # Float
          "REV2",  # PWM backward, step 2
          "REV1"]  # PWM backward, step 1
 
-
-#  Returns the payload for a Combo PWM Mode command.
-#
-def payload(_ch, _red, _blue, _esc=rc.esc.PWM, _addr=rc.addr.DEF):
+def payload(_ch, _red, _blue, _esc=rc.ESC.PWM, _addr=rc.ADDR.DEF):
+    """Returns the payload for a Combo PWM Mode command."""
     nibble1 = _addr | _esc | _ch
     nibble2 = _blue
     nibble3 = _red
     nibble4 = rc.lrc(nibble1, nibble2, nibble3)
     return nibble1, nibble2, nibble3, nibble4
 
-
-#  Returns the button for a Combo PWM Mode command.
-#
 def button(_ch, _red, _blue):
-    return (rc.channel[_ch], steps[_red], steps[_blue])
+    """Returns the button for a Combo PWM Mode command."""
+    return (rc.CHANNEL[_ch], STEPS[_red], STEPS[_blue])
 
+def button_string(ch_, red, blue):
+    """Returns the string representation of a Combo PWM Mode button."""
+    return 'CH{:s}_{:s}_{:s}'.format(ch_, red, blue)
 
-#  Returns the string representation of a Combo PWM Mode button.
-#
-def button_string(ch, red, blue):
-    return 'CH{:s}_{:s}_{:s}'.format(ch, red, blue)
-
-
-#  Prints LIRC codes for Combo PWM Mode.
-#
 def lirc_codes():
+    """Prints LIRC codes for Combo PWM Mode."""
     for i in range(0, 4):
         for j in range(0, 16):
             for k in range(0, 16):
-
                 hex_codes = rc.payload_string(*payload(i, j, k))
                 lirc_pattern = button_string(*button(i, j, k))
                 print "\t{}\t\t{}".format(lirc_pattern, hex_codes)
