@@ -49,10 +49,10 @@ Released under the `MIT License`_.
 .. _LIRC Configuration File Format: http://www.lirc.org/html/lircd.conf.html
 .. _LEGO Power Functions RC v1.20: http://cache.lego.com/Media/Download/PowerfunctionsElementSpecsDownloads/otherfiles/download9FC026117C091015E81EC28101DACD4E/8884RemoteControlIRReceiver_Download.pdf
 
-.. _LEGO_Power_Functions_RC_v120: https://github.com/iConor/lego-lirc/blob/master/reference/LEGO_Power_Functions_RC_v120.pdf
-.. _LPF_RC_Protocol: https://github.com/iConor/lego-lirc/blob/master/reference/LPF_RC_Protocol.rst
-.. _LPF_RC_Modes: https://github.com/iConor/lego-lirc/blob/master/reference/LPF_RC_Modes.rst
-.. _LIRC_Remote: https://github.com/iConor/lego-lirc/blob/master/reference/LIRC_Remote.rst
-.. _LIRC_RPI_Install: https://github.com/iConor/lego-lirc/blob/master/reference/LIRC_RPI_Install.md
+.. _LEGO_Power_Functions_RC_v120: https://github.com/iConor/lego-lirc/blob/master/docs/LEGO_Power_Functions_RC_v120.pdf
+.. _LPF_RC_Protocol: https://github.com/iConor/lego-lirc/blob/master/docs/LPF_RC_Protocol.rst
+.. _LPF_RC_Modes: https://github.com/iConor/lego-lirc/blob/master/docs/LPF_RC_Modes.rst
+.. _LIRC_Remote: https://github.com/iConor/lego-lirc/blob/master/docs/LIRC_Remote.rst
+.. _LIRC_RPI_Install: https://github.com/iConor/lego-lirc/blob/master/docs/LIRC_RPI_Install.md
 
 .. _MIT License: http://github.com/iConor/lego-lirc/blob/master/LICENSE

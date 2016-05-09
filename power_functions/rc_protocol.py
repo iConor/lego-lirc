@@ -24,3 +24,19 @@ def lrc(nibble1, nibble2, nibble3):
 def payload_string(nibble1, nibble2, nibble3, nibble4):
     """Returns the string representation of a payload."""
     return'0x{:X}{:X}{:X}{:X}'.format(nibble1, nibble2, nibble3, nibble4)
+
+def lirc_remote(author, mode):
+    """Prints LIRC remote info for LEGO Power Functions RC."""
+    name = mode.split()[0] + '_' + mode.split()[1]
+    with open('power_functions/lirc_remote.txt') as source:
+        with open('power_functions/' + name, 'w') as dest:
+            for line in source:
+                text = line.rstrip('\n')
+                end = text[-4:]
+                if end == 'd by':
+                    text += ' ' + author
+                elif end == 'ions':
+                    text += ' ' + mode + ' Mode'
+                elif end == 'EGO_':
+                    text += name
+                dest.write(text + '\n')

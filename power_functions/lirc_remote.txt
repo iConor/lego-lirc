@@ -1,0 +1,25 @@
+#
+# contributed by
+#
+# brand:                       LEGO
+# model no. of remote control: Power Functions
+# devices being controlled by this remote: 8884 Power Functions IR Receiver
+#
+
+begin remote
+
+  name  LEGO_
+  bits           16
+  flags   SPACE_ENC
+  eps            20
+  aeps          105
+
+  header        158  1026
+  one           158   553
+  zero          158   263
+  foot          158  1026
+
+      begin codes
+      end codes
+
+end remote
