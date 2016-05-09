@@ -1,5 +1,5 @@
 LIRC Remote
 ===========
 
-.. include:: LIRC_Remote.txt
+.. include:: lirc_remote.txt
    :literal:

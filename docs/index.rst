@@ -11,12 +11,13 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   Readme.rst
-   LPF_RC_Protocol.rst
-   LPF_RC_Modes.rst
-   LIRC_RPI_Install.rst
-   LIRC_Remote.rst
-   License.rst
+   readme
+   lpf_rc_protocol
+   lpf_rc_modes
+   lirc_rpi_install
+   lirc_remote
+   power_functions
+   license
 
 
 
