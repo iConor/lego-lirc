@@ -1,6 +1,6 @@
 """LEGO Power Functions RC v1.20 - Combo Direct Mode"""
 
-import power_functions.pf_rc_protocol as rc
+import power_functions.rc_protocol as pf_rc
 
 # Output Data
 OUTPUT = ["FLT",  # Float
@@ -8,21 +8,21 @@ OUTPUT = ["FLT",  # Float
           "REV",  # Backward
           "BRK"]  # Brake
 
-def payload(_ch, _red, _blue, _esc=rc.ESC.MODE, _addr=rc.ADDR.DEF):
+def payload(channel, red, blue, _esc=pf_rc.ESC.MODE, _addr=pf_rc.ADDR.DEF):
     """Returns the payload for a Combo Direct Mode command."""
-    nibble1 = _esc | _ch
-    nibble2 = _addr | rc.MODE.DIR
-    nibble3 = _red | (_blue << 2)
-    nibble4 = rc.lrc(nibble1, nibble2, nibble3)
+    nibble1 = _esc | channel
+    nibble2 = _addr | pf_rc.MODE.DIR
+    nibble3 = red | (blue << 2)
+    nibble4 = pf_rc.lrc(nibble1, nibble2, nibble3)
     return nibble1, nibble2, nibble3, nibble4
 
-def button(_ch, _red, _blue):
+def button(channel, red, blue):
     """Returns the button for a Combo Direct Mode command."""
-    return (rc.CHANNEL[_ch], OUTPUT[_red], OUTPUT[_blue])
+    return (pf_rc.CHANNEL[channel], OUTPUT[red], OUTPUT[blue])
 
-def button_string(ch_, red, blue):
+def button_string(channel, red, blue):
     """Returns the string representation of Combo Direct Mode button."""
-    return 'CH{:s}_{:s}_{:s}'.format(ch_, red, blue)
+    return 'CH{:s}_{:s}_{:s}'.format(channel, red, blue)
 
 def lirc_codes():
     """Prints LIRC codes for Combo Direct Mode."""
@@ -30,6 +30,6 @@ def lirc_codes():
         for k in range(0, 16):
             red = k & 0x3
             blue = k >> 2
-            hex_codes = rc.payload_string(*payload(i, red, blue))
+            hex_codes = pf_rc.payload_string(*payload(i, red, blue))
             lirc_patterns = button_string(*button(i, red, blue))
             print "\t{}\t\t{}".format(lirc_patterns, hex_codes)

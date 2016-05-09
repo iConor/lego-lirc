@@ -1,6 +1,6 @@
 """LEGO Power Functions RC v1.20 - Single Output Mode"""
 
-import power_functions.pf_rc_protocol as rc
+import power_functions.rc_protocol as pf_rc
 
 # Mode Bits
 MODE = ["PWM",    # Mode = PWM
@@ -45,25 +45,25 @@ CSTID = ["TGL_FWD",  # Toggle full forward
          "TGL_C2",   # Toggle C2
          "TGL_REV"]  # Toggle full backward
 
-def payload(_ch, _mode, _out, _data, _esc=rc.ESC.MODE, _addr=rc.ADDR.DEF):
+def payload(channel, mode, output, data, _esc=pf_rc.ESC.MODE, _addr=pf_rc.ADDR.DEF):
     """Returns the payload for a Single Output Mode command."""
-    nibble1 = _esc | _ch
-    nibble2 = _addr | rc.MODE.SNGL | (_mode << 1) | _out
-    nibble3 = _data
-    nibble4 = rc.lrc(nibble1, nibble2, nibble3)
+    nibble1 = _esc | channel
+    nibble2 = _addr | pf_rc.MODE.SNGL | (mode << 1) | output
+    nibble3 = data
+    nibble4 = pf_rc.lrc(nibble1, nibble2, nibble3)
     return nibble1, nibble2, nibble3, nibble4
 
-def button(_ch, _mode, _output, _data):
+def button(channel, mode, output, data):
     """Returns the button for a Single Output Mode command."""
-    if _mode == 0:
-        data_ = PWM[_data]
+    if mode == 0:
+        data = PWM[data]
     else:
-        data_ = CSTID[_data]
-    return (rc.CHANNEL[_ch], OUTPUT[_output], data_)
+        data = CSTID[data]
+    return (pf_rc.CHANNEL[channel], OUTPUT[output], data)
 
-def button_string(ch_, output, data):
+def button_string(channel, output, data):
     """Returns the string representation of a Single Output Mode button."""
-    return 'CH{:s}_{:s}_{:s}'.format(ch_, output, data)
+    return 'CH{:s}_{:s}_{:s}'.format(channel, output, data)
 
 def lirc_codes():
     """Prints LIRC codes for Single Output Mode."""
@@ -72,6 +72,6 @@ def lirc_codes():
             for k in range(0, 16):
                 mode = (j & 0x2) >> 1
                 output = j & 0x1
-                hex_codes = rc.payload_string(*payload(i, mode, output, k))
+                hex_codes = pf_rc.payload_string(*payload(i, mode, output, k))
                 lirc_patterns = button_string(*button(i, mode, output, k))
                 print "\t{}\t\t{}".format(lirc_patterns, hex_codes)
