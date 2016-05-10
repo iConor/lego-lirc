@@ -28,7 +28,7 @@ def payload_string(nibble1, nibble2, nibble3, nibble4):
 def lirc_remote(author, mode):
     """Prints LIRC remote info for LEGO Power Functions RC."""
     name = mode.split()[0] + '_' + mode.split()[1]
-    with open('power_functions/lirc_remote.txt') as source:
+    with open('power_functions/lirc_template.txt') as source:
         with open('power_functions/' + name, 'w') as dest:
             for line in source:
                 text = line.rstrip('\n')
