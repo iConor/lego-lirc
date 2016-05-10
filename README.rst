@@ -28,10 +28,10 @@ References
 ----------
 
 | **Included:**
-- LEGO_Power_Functions_RC_v120_ is a copy of LEGO's official documentation for their protocol.
-- LPF_RC_Protocol_ contains a summarized protocol definition and encoding/decoding timing parameters.
-- LPF_RC_Modes_ contains summarized mode-specific data and deviations from the standard protocol.
-- LIRC_Remote_ contains common LIRC lircd.conf-style configuration file settings for the LEGO RC protocol.
+| - LEGO_Power_Functions_RC_v120_ is a copy of LEGO's official documentation for their protocol.
+| - LPF_RC_Protocol_ contains a summarized protocol definition and encoding/decoding timing parameters.
+| - LPF_RC_Modes_ contains summarized mode-specific data and deviations from the standard protocol.
+| - LIRC_Remote_ contains common LIRC lircd.conf-style configuration file settings for the LEGO RC protocol.
 
 | **Compatible Hardware:** `8884 IR Receiver`_ | `8885 IR Remote Control`_ | `8879 IR Speed Remote Control`_
 | **Referenced Documentation:** `LIRC Configuration File Format`_ | `LEGO Power Functions RC v1.20`_
