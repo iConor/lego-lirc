@@ -12,11 +12,10 @@ Contents:
    :maxdepth: 2
 
    readme
-   lpf_rc_protocol
-   lpf_rc_modes
-   lirc_rpi_install
-   lirc_remote
+   lirc-config/files
+   lpf-rc/protocol
    power_functions
+   lirc_rpi_install
    license
 
 
